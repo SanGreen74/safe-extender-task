@@ -41,7 +41,7 @@ namespace Reflection.Task
             obj.Field.Should().NotBeNull();
         }
 
-        private class InitializePrivateFieldTestCaseClass
+        private class InitializePrivateMembersTestCaseClass
         {
             private object Property { get; set; }
             private object Field;
@@ -53,7 +53,7 @@ namespace Reflection.Task
         [Test]
         public void CreateSafe_InitializePrivateMembers()
         {
-            var obj = objectCreator.CreateSafe<InitializePrivateFieldTestCaseClass>();
+            var obj = objectCreator.CreateSafe<InitializePrivateMembersTestCaseClass>();
 
             obj.GetProperty().Should().NotBeNull();
             obj.GetField().Should().NotBeNull();
